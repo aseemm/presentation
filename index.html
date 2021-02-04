@@ -1,40 +1,193 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
+	<title>reveal.js</title>
+	
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
+	
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+    </head>
+    <body>
+	<div class="reveal">
+	    <div class="slides">
+		<!-- Title -->
+		<style>
+		 .reveal .title-custom {
+		     text-align: left;
+		     text-transform: lowercase;
+		 }  
+		</style>
+		<section data-background-image="media/background.jpg">
+		    <h1 class="title-custom">A deep dive into images</h1>
+		    <h3 class="title-custom">and then some…</h3>
+		    <p class="title-custom"><small><a href="mailto:xxx@xxx.com">Aseem Maheshwari</a> </small></p>
+		</section>
+		
+		<!-- Bullet Points -->
+		<style>
+		 .reveal .title-custom2 {
+		     text-align: left;
+		     text-transform: capitalize;
+		 }  
+		</style>
+		<section>
+		    <h2 class="title-custom2">What is C?</h2>
+		    <ul>
+			<li>
+			    C is the third letter of English alphabets.
+			    <ul>
+				<li>Black tea</li>
+				<li>Green tea</li>
+			    </ul>
+			</li>
+			<li>It’s a computer programming language.</li>
+			<li>That means, you can use C to give your computer instructions to follow.</li>
+		    </ul>
+		</section>
+		
+		<!-- Images -->
+		<style>
+		 .reveal .title-custom3 {
+		     text-align: center;
+		     text-transform: capitalize;
+		 }  
+		</style>
+		<section>
+		    <h2  class="title-custom3">And this guy created C</h2>
+		    <center><img src="media/owner.jpg"></center>
+		</section>
 
-		<title>reveal.js</title>
+		<!-- Tables -->
+		<section>
+		    <table class="r-fit-text">
+			<tr>
+			    <th></th>
+			    <th>Raster scan</th>
+			    <th>Random scan</th>
+			</tr>
+			<tr>
+			    <td>Electron beam</td>
+			    <td>Swept across entire screen, one row at a time, from top-to-bottom</td>
+			    <td>Only directed to parts of the screen where image is drawn</td>
+			</tr>
+			<tr>
+			    <td>Resolution</td>
+			    <td>Poor, due to plotting as discrete point sets</td>
+			    <td>Good, as CRT beam directly follows line path</td>
+			</tr>
+			<tr>
+			    <td>Picture definition</td>
+			    <td>Stored as set of intensity values (pixels) in refresh buffer area</td>
+			    <td>Stored as set of line drawing instructions in display file</td>
+			</tr>
+			<tr>
+			    <td>Realism</td>
+			    <td>Variable intensity values allow for realistic shadow and colour patterns</td>
+			    <td>Most suited for line drawing</td>
+			</tr>
+			<tr>
+			    <td>Drawing method</td>
+			    <td>Screen points (pixels)</td>
+			    <td>Mathematical functions</td>
+			</tr>
+		    </table>
+		    <p><small>Source: Prof. Vijay M. Shekhat, CE Department, <a href="http://www.darshan.ac.in/Upload/DIET/Documents/CE/2160703_CG_GTU_Study_Material_2017_11042017_033102AM.pdf">Computer Graphics</a></small></p>
+		    <aside class="notes">
+			<p>Or you could do something called a random scan which could generate vector graphics and both types of scanning have their pros and cons. Back in the 70s, both raster displays and vector displays were used for computer graphics.</p>
+			<p>The relatively high price of memory back then made vector displays more affordable, but by today, they've practically all been replaced by raster displays.</p>
+			<p>Of course, these are merely the mechanics of how an image gets displayed onto a screen. And before that can happen, we must have image data.</p>
+		    </aside>
+		</section>
+		
+		<!-- Code Block -->
+		<section data-markdown>
+		    <textarea data-template>
+                                        ```js [1-2|3|4]
+                                        let a = 1;
+                                        let b = 2;
+                                        let c = x => 1 + 2 + x;
+                                        c(3);
+                                        ```
+		    </textarea>
+		</section>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<!-- Code Highlights -->
+		<section>
+<pre><code data-line-numbers="3,8-10">
+	<table>
+	    <tr>
+		<td>Apples</td>
+		<td>$1</td>
+		<td>7</td>
+	    </tr>
+	    <tr>
+		<td>Oranges</td>
+		<td>$2</td>
+		<td>18</td>
+	    </tr>
+	</table>
+</code></pre>
+		</section>
+		
+		<!-- Markdown -->
+		<section data-markdown
+			 data-separator="^\n---\n$"
+			 data-vertical="^\n--\n$"
+			 data-notes="^Notes:">
+# Presentation
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+---
 
-		<script src="js/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+# Slide1
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+1. Write presentation in Markdown
+1. setup presentation
+1. present to the audience
+1. save as pdf
+1. Aggregate multiple markdown files in one place
+1. clean the folder
+
+---
+
+# Slide 2
+This slide contains content
+
+---
+
+# Thank you
+		</section>
+		
+		<!-- Fragments -->
+		<section>
+		    <h2>Map Tile Service</h2>
+		    <p class="fragment">Foundation for mapping applications</p>
+		    <p class="fragment">Works on smart watches, phones, tablets, desktops, web</p>
+		    <p class="fragment">Flexible</p>
+		    <p class="fragment">Custom renderers = extremely powerful</p>
+		</section>
+	    </div>
+	</div>
+	
+	<script src="js/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+	 // More info about initialization & config:
+	 // - https://revealjs.com/initialization/
+	 // - https://revealjs.com/config/
+	 Reveal.initialize({
+	     hash: true,
+	     
+	     // Learn about plugins: https://revealjs.com/plugins/
+	     plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+	 });
+	</script>
+    </body>
 </html>
